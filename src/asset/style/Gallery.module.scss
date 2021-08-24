@@ -1,0 +1,39 @@
+.gallery {
+  &_container {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #f3f4f6;
+    overflow-y: scroll;
+  }
+
+  &_photolist {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+  }
+
+  &_topbtn {
+    position: fixed;
+    width: 10rem;
+    bottom: 2rem;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 1rem;
+    height: 2rem;
+    display: grid;
+    place-items: center;
+    cursor: pointer;
+    transition-property: all;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 300ms;
+
+    &:hover {
+      background: #000;
+      color: #fff;
+    }
+  }
+}
