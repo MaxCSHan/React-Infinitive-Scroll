@@ -35,6 +35,8 @@ const Gallery = () => {
   const [datas, setDatas] = useState<IPhoto[]>([]);
 
   //Lazy Loading
+
+  //Intersction Observer on the last child
   const lastPhotoRef = useCallback(
     (node) => {
       if (isLoading) return;
@@ -92,20 +94,6 @@ const Gallery = () => {
     [pagination$, pageNumber]
   );
 
-  // useEffect(() => {
-  //   const subscription = getPhotoListLimit4(pageNumber).subscribe((result) => {
-  //     const newData = result as IPhoto[];
-
-  //     //Filter prevent duplicates
-  //     setDatas((datas) => [...datas, ...newData.filter(ele => !datas.map(data => data.id).includes(ele.id))]);
-  //     setIsLoading(false);
-  //   });
-
-  //   return () => {
-  //     subscription.unsubscribe();
-  //   };
-
-  // }, [pageNumber]);
 
   const scrollToTop = () => {
     document.getElementById("gallery")!.scroll({
